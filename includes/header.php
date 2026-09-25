@@ -16,6 +16,12 @@
             <a href="/donation_web/donor/my_donations.php">My Donations</a>
             <a href="/donation_web/donor/contact.php">Contact</a>
             <a href="/donation_web/logout.php">Logout (<?php echo htmlspecialchars($_SESSION['full_name']); ?>)</a>
+        <?php elseif (isset($_SESSION['user_id']) && $_SESSION['role'] === 'admin'): ?>
+            <a href="/donation_web/admin/dashboard.php">Admin Dashboard</a>
+            <a href="/donation_web/admin/campaigns.php">Campaigns</a>
+            <a href="/donation_web/admin/donations.php">Donations</a>
+            <a href="/donation_web/admin/messages.php">Messages</a>
+            <a href="/donation_web/logout.php">Logout (<?php echo htmlspecialchars($_SESSION['full_name']); ?>)</a>
         <?php else: ?>
             <a href="/donation_web/login.php">Login</a>
             <a href="/donation_web/register.php">Register</a>
