@@ -17,3 +17,4 @@ th { background:#f0f0f0; }
 .msg-success { color:#1a7a1a; margin-bottom:10px; }
 .progress-bar { background:#e0e0e0; border-radius:4px; height:14px; overflow:hidden; margin:8px 0; }
 .progress-bar-fill { background:#b30000; height:100%; }
+.field-error { color:#b30000; font-size:12px; display:block; margin-top:-10px; margin-bottom:10px; }

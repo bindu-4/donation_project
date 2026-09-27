@@ -40,15 +40,18 @@ require_once '../includes/header.php';
 <h2>Edit Campaign</h2>
 <?php if ($error): ?><p class="msg-error"><?php echo htmlspecialchars($error); ?></p><?php endif; ?>
 
-<form method="POST">
+<form method="POST" id="campaignForm">
     <label>Title</label>
-    <input type="text" name="title" value="<?php echo htmlspecialchars($campaign['title']); ?>" required>
+    <input type="text" name="title" id="title" value="<?php echo htmlspecialchars($campaign['title']); ?>" required>
+    <span class="field-error" id="title_error"></span>
 
     <label>Description</label>
-    <textarea name="description" rows="4" required><?php echo htmlspecialchars($campaign['description']); ?></textarea>
+    <textarea name="description" id="description" rows="4" required><?php echo htmlspecialchars($campaign['description']); ?></textarea>
+    <span class="field-error" id="description_error"></span>
 
     <label>Goal Amount (Rs.)</label>
-    <input type="number" name="goal_amount" min="1" step="0.01" value="<?php echo $campaign['goal_amount']; ?>" required>
+    <input type="number" name="goal_amount" id="goal_amount" min="1" step="0.01" value="<?php echo $campaign['goal_amount']; ?>" required>
+    <span class="field-error" id="goal_amount_error"></span>
 
     <label>Status</label>
     <select name="status">
@@ -58,5 +61,4 @@ require_once '../includes/header.php';
 
     <button type="submit">Update Campaign</button>
 </form>
-
 <?php require_once '../includes/footer.php'; ?>

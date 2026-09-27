@@ -48,15 +48,18 @@ require_once '../includes/header.php';
 ?>
 <h2>Donate to: <?php echo htmlspecialchars($campaign['title']); ?></h2>
 <?php if ($error): ?><p class="msg-error"><?php echo htmlspecialchars($error); ?></p><?php endif; ?>
-<form method="POST">
+<form method="POST" id="donateForm">
     <label>Amount (Rs.)</label>
-    <input type="number" name="amount" min="1" step="0.01" required>
+    <input type="number" name="amount" id="amount" min="1" step="0.01" required>
+    <span class="field-error" id="amount_error"></span>
+
     <label>Payment Method</label>
     <select name="payment_method">
         <option value="Cash">Cash</option>
         <option value="Bank Transfer">Bank Transfer</option>
         <option value="Cheque">Cheque</option>
     </select>
+
     <button type="submit">Confirm Donation</button>
 </form>
 <?php require_once '../includes/footer.php'; ?>

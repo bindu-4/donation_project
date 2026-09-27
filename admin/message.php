@@ -11,13 +11,18 @@ require_once '../includes/header.php';
 ?>
 
 <h2>Contact Messages</h2>
+
+<table>
+<tr><th>Name</th><th>Subject</th><th>Date</th><th>Status</th><th>Action</th></tr>
 <?php while ($m = $messages->fetch_assoc()): ?>
-<div class="card">
-    <p><strong><?php echo htmlspecialchars($m['name']); ?></strong> (<?php echo htmlspecialchars($m['email']); ?>)</p>
-    <p><strong>Subject:</strong> <?php echo htmlspecialchars($m['subject']); ?></p>
-    <p><?php echo nl2br(htmlspecialchars($m['message'])); ?></p>
-    <p><small><?php echo date("d M Y, h:i A", strtotime($m['submitted_at'])); ?></small></p>
-</div>
+<tr>
+    <td><?php echo htmlspecialchars($m['name']); ?></td>
+    <td><?php echo htmlspecialchars($m['subject']); ?></td>
+    <td><?php echo date("d M Y, h:i A", strtotime($m['submitted_at'])); ?></td>
+    <td><?php echo $m['is_read'] ? 'Read' : '<strong>Unread</strong>'; ?></td>
+    <td><a href="message_detail.php?message_id=<?php echo $m['message_id']; ?>">View &amp; Reply</a></td>
+</tr>
 <?php endwhile; ?>
+</table>
 
 <?php require_once '../includes/footer.php'; ?>

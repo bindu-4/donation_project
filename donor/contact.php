@@ -21,11 +21,15 @@ require_once '../includes/header.php';
 ?>
 <h2>Contact Us</h2>
 <?php if ($success): ?><p class="msg-success">Message pathayeko! Dhanyabad.</p><?php endif; ?>
-<form method="POST">
+<form method="POST" id="contactForm">
     <label>Subject</label>
-    <input type="text" name="subject" required>
+    <input type="text" name="subject" id="subject" required>
+    <span class="field-error" id="subject_error"></span>
+
     <label>Message</label>
-    <textarea name="message" rows="5" required></textarea>
+    <textarea name="message" id="message" rows="5" required></textarea>
+    <span class="field-error" id="message_error"></span>
+
     <button type="submit">Send</button>
 </form>
 <?php require_once '../includes/footer.php'; ?>

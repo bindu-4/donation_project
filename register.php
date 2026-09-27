@@ -39,21 +39,26 @@ require_once 'includes/header.php';
     <p class="msg-error"><?php echo htmlspecialchars($error); ?></p>
 <?php endif; ?>
 
-<form method="POST">
+<form method="POST" id="registerForm">
     <label>Full Name</label>
-    <input type="text" name="full_name" required>
+    <input type="text" name="full_name" id="full_name" required>
+    <span class="field-error" id="full_name_error"></span>
 
     <label>Email</label>
-    <input type="email" name="email" required>
+    <input type="email" name="email" id="email" required>
+    <span class="field-error" id="email_error"></span>
 
     <label>Phone</label>
-    <input type="text" name="phone" required>
+    <input type="text" name="phone" id="phone" required>
+    <span class="field-error" id="phone_error"></span>
 
     <label>Password</label>
-    <input type="password" name="password" required>
+    <input type="password" name="password" id="password" required>
+    <span class="field-error" id="password_error"></span>
 
     <label>Confirm Password</label>
-    <input type="password" name="confirm_password" required>
+    <input type="password" name="confirm_password" id="confirm_password" required>
+    <span class="field-error" id="confirm_error"></span>
 
     <button type="submit">Register</button>
 </form>
