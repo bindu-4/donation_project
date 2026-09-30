@@ -10,6 +10,55 @@ require_once 'includes/header.php';
 <h2>Welcome to Helping Hands</h2>
 <p>Support our active campaigns and make a difference.</p>
 
+<div class="category-section">
+    <h2>Choose a Cause</h2>
+    <div class="category-grid">
+
+        <a href="#active-campaigns" class="category-card active-category">
+            <img src="assets/images/flood.jpg" alt="Flood Victims" class="category-image">
+            <div class="category-body">
+                <div class="category-title">Flood Victims</div>
+                <span class="category-badge badge-active">Active</span>
+            </div>
+        </a>
+
+        <div class="category-card disabled-category">
+            <img src="assets/images/education.jpg" alt="Education Support" class="category-image">
+            <div class="category-body">
+                <div class="category-title">Education Support</div>
+                <span class="category-badge">Coming Soon</span>
+            </div>
+        </div>
+
+        <div class="category-card disabled-category">
+            <img src="assets/images/orphanage.jpg" alt="Orphanage" class="category-image">
+            <div class="category-body">
+                <div class="category-title">Orphanage</div>
+                <span class="category-badge">Coming Soon</span>
+            </div>
+        </div>
+
+        <div class="category-card disabled-category">
+            <img src="assets/images/oldage.jpg" alt="Old Age Home" class="category-image">
+            <div class="category-body">
+                <div class="category-title">Old Age Home</div>
+                <span class="category-badge">Coming Soon</span>
+            </div>
+        </div>
+
+        <div class="category-card disabled-category">
+            <img src="assets/images/temple.jpg" alt="Temple Support" class="category-image">
+            <div class="category-body">
+                <div class="category-title">Temple Support</div>
+                <span class="category-badge">Coming Soon</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<h2 id="active-campaigns">Active Campaigns</h2>
+
 <?php if ($campaigns && $campaigns->num_rows > 0): ?>
     <?php while ($c = $campaigns->fetch_assoc()):
         $percent = $c['goal_amount'] > 0 ? min(100, round(($c['raised_amount'] / $c['goal_amount']) * 100)) : 0;

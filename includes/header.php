@@ -20,6 +20,7 @@
             <a href="/donation_web/admin/dashboard.php">Admin Dashboard</a>
             <a href="/donation_web/admin/campaigns.php">Campaigns</a>
             <a href="/donation_web/admin/donations.php">Donations</a>
+            <a href="/donation_web/admin/donors.php">Donors</a>
             <a href="/donation_web/admin/messages.php">Messages</a>
             <a href="/donation_web/logout.php">Logout (<?php echo htmlspecialchars($_SESSION['full_name']); ?>)</a>
         <?php else: ?>
